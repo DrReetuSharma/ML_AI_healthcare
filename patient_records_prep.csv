@@ -1,0 +1,26 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+
+# Load Electronic Health Records (EHRs) data
+ehr_data = pd.read_csv('ehr_data.csv')
+
+# Handle missing values
+imputer = SimpleImputer(strategy='mean')
+ehr_data_filled = imputer.fit_transform(ehr_data)
+
+# Define mapping for categorical variables
+gender_mapping = {'Male': 0, 'Female': 1}
+ethnicity_mapping = {'Asian': 0, 'Black': 1, 'White': 2, 'Hispanic': 3}
+
+# Map categorical variables to numerical values
+ehr_data_filled['gender'] = ehr_data_filled['gender'].map(gender_mapping)
+ehr_data_filled['ethnicity'] = ehr_data_filled['ethnicity'].map(ethnicity_mapping)
+
+# Standardize numerical features
+scaler = StandardScaler()
+ehr_data_scaled = scaler.fit_transform(ehr_data_filled)
+
+# Split data into features (X) and target variable (y)
+X = ehr_data_scaled.drop(columns=['diagnosis'])
+y = ehr_data_scaled['diagnosis']
