@@ -1,0 +1,13 @@
+train_score=model.evaluate(train_gen , verbose=1)
+valid_score=model.evaluate(valid_gen , verbose=1)
+test_score=model.evaluate(test_gen , verbose=1)
+
+print("Train Loss: ", train_score[0])
+print("Train Accuracy: ", train_score[1])
+print('=' * 20)
+print("valid Loss: ", valid_score[0])
+print("valid Accuracy: ", valid_score[1])
+print('=' * 20)
+print("test Loss: ", test_score[0])
+print("test Accuracy: ", test_score[1])
+print('=' * 20)
