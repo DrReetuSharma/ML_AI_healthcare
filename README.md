@@ -31,3 +31,12 @@ To classify patient chest X-ray images into normal and pneumonia cases using Con
 9. Deployment: Once satisfied with the model's performance, deploy it in a production environment where it can classify new chest X-ray images into normal and pneumonia cases.
 
 By following these steps and continuously iterating on model improvements, you can build an effective CNN-based classifier for pneumonia detection from chest X-ray images.
+
+##### Acknowledgments:
+This work is inspired by the advancements in AI-driven drug discovery and the contributions of researchers in the field. Special thanks to the developers of open-source libraries and datasets used in this project. Please modify it as per your project specifications.
+References:
+
+https://aspire10x.com/data-solutions/
+
+### Contact/correspondance:
+For any inquiries or feedback, please contact sharmar@aspire10x.com. https://aspire10x.com/data-solutions/
